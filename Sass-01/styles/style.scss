@@ -1,0 +1,43 @@
+$cor_esquerdo: #900C3F;
+$cor_direito: #F94C10;
+
+@mixin reset {
+    margin: 0;
+    padding: 0;
+}
+
+// mix para a cor e texto das divs
+@mixin cor_texto($cor_de_fundo, $cor_do_texto) {
+    width: 50%;
+    background-color: $cor_de_fundo;
+    .texto {
+        color: $cor_do_texto;
+        font-size: 150px;
+    }
+}
+
+/*
+Aqui começa a brincadeira que aparece no css
+*/
+
+body {
+    @include reset;
+}
+.container__principal {
+    height: 100vh;
+    display: flex;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .esquerdo {
+        @include cor_texto($cor_esquerdo, $cor_direito);
+    }
+
+    .direito {
+        @include cor_texto($cor_direito, $cor_esquerdo);
+    }
+}
