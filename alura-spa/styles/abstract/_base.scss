@@ -1,0 +1,7 @@
+// _ significa que é uma partial que é onde fica os etilos padrões
+
+@import './variables';
+
+html, body {
+    font-family: $fonte;
+}
